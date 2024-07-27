@@ -1,49 +1,51 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native'
-import React, { useEffect } from 'react'
-import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
+import { View, StyleSheet, Pressable, Button } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 
 const FadeCircle = () => {
-
-  const opacity = useSharedValue(0)
+  const opacity = useSharedValue(0);
 
   const animatedStyle = useAnimatedStyle(() => {
     return {
-      opacity: opacity.value
-  }
-  }, [])
+      opacity: opacity.value,
+    };
+  }, []);
 
   const handleClick = () => {
-    opacity.value = withTiming(1, { duration : 200})
-  }
+    // Toggle opacity between 0 and 1
+    opacity.value = withTiming(opacity.value === 1 ? 0 : 1, { duration: 2000 });
+  };
 
   useEffect(() => {
-    handleClick()
-  }, [])
-  
+    // Trigger animation on mount
+    handleClick();
+  }, []);
 
   return (
-    <View style={styles.container}> 
-      {/* <Pressable onPress={handleClick}> */}
+    <View style={styles.container}>
       <Animated.View style={[styles.circle, animatedStyle]}>
-      {/* <Text>fade</Text> */}
+        {/* Add Text or Pressable here if needed */}
       </Animated.View>
-      {/* </Pressable> */}
+      <Button title="fade" onPress={handleClick} />
+
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
-  container : {
-
+  container: {
+    // flex: 1, // Ensure container takes full space if needed
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  circle : {
-    borderRadius : 50,
-    backgroundColor : 'red',
-    height : 50,
-    width : 50,
-    alignItems : 'center',
-    justifyContent : 'center',
-  }
-})
+  circle: {
+    borderRadius: 50,
+    backgroundColor: 'red',
+    height: 50,
+    width: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
-export default FadeCircle
+export default FadeCircle;
