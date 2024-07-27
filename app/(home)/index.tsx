@@ -7,6 +7,7 @@ import FadeCircle from '@/components/animatedComponents/fadeCircle';
 import Wobble from '@/components/animatedComponents/wobble';
 import WobbleClick from '@/components/animatedComponents/wobbleClick';
 import Move from '@/components/animatedComponents/move';
+import AnimatedModalExample from '@/components/animatedComponents/animatedModal';
 
 
 const Home = () => {
@@ -15,11 +16,12 @@ const Home = () => {
       <View style={styles.container}>
 
       <Text>Home</Text>
-      <ScaleCircle />
+      {/* <ScaleCircle />
       <FadeCircle />
       <Wobble />
       <WobbleClick />
-      <Move width={200} />
+      <Move width={200} /> */}
+      <AnimatedModalExample />
       </View>
     </SafeAreaView>
   )
