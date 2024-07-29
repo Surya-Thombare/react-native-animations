@@ -21,17 +21,17 @@ const AnimatedModalExample = () => {
   }));
 
   const openModal = (x: number, y: number) => {
-    translateX.value = x - width / 2 - 400; // Adjust for the modal size
-    translateY.value = y - height / 2 - 100; // Adjust for the modal size
-    scale.value = 0.5;
+    translateX.value = x - width / 2 + 100; // Adjust for the modal size
+    translateY.value = y - height / 2 + 100; // Adjust for the modal size
     opacity.value = 0;
+    scale.value = 0.5;
     setModalVisible(true);
 
     // Animate to center
-    opacity.value = withTiming(1, { duration: 300 });
-    scale.value = withTiming(1, { duration: 300 });
     translateX.value = withTiming(0, { duration: 300 });
     translateY.value = withTiming(0, { duration: 300 });
+    opacity.value = withTiming(1, { duration: 300 });
+    scale.value = withTiming(1, { duration: 300 });
   };
 
   const closeModal = () => {
@@ -82,8 +82,6 @@ const styles = StyleSheet.create({
   },
   modal: {
     position: 'absolute',
-    top: height / 2 - 100, // Center the modal vertically
-    left: width / 2 - 300, // Center the modal horizontally
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     width: 200,
     height: 200,

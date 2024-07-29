@@ -8,6 +8,7 @@ import Wobble from '@/components/animatedComponents/wobble';
 import WobbleClick from '@/components/animatedComponents/wobbleClick';
 import Move from '@/components/animatedComponents/move';
 import AnimatedModalExample from '@/components/animatedComponents/animatedModal';
+import BottomAnimatedModal from '@/components/animatedComponents/bottomModal';
 
 
 const Home = () => {
@@ -21,7 +22,8 @@ const Home = () => {
       <Wobble />
       <WobbleClick />
       <Move width={200} /> */}
-      <AnimatedModalExample />
+      {/* <AnimatedModalExample /> */}
+      <BottomAnimatedModal />
       </View>
     </SafeAreaView>
   )
