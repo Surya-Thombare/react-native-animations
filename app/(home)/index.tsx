@@ -22,7 +22,7 @@ const Home = () => {
       <Wobble />
       <WobbleClick />
       <Move width={200} /> */}
-      {/* <AnimatedModalExample /> */}
+      <AnimatedModalExample />
       <BottomAnimatedModal />
       </View>
     </SafeAreaView>
