@@ -17,11 +17,11 @@ const Home = () => {
       <View style={styles.container}>
 
       <Text>Home</Text>
-      {/* <ScaleCircle />
+      <ScaleCircle />
       <FadeCircle />
       <Wobble />
       <WobbleClick />
-      <Move width={200} /> */}
+      <Move width={200} />
       <AnimatedModalExample />
       <BottomAnimatedModal />
       </View>
